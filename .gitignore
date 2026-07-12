@@ -32,10 +32,9 @@ dmypy.json
 .ruff_cache/
 
 # Temporary exclusions (will be tracked later)
-.github/workflows/
+.github/
 tests/
 CHANGELOG.md
 
 # Accidental artifacts
 nul
-
