@@ -44,12 +44,6 @@ make dev
 | `QR_QR_BOX_SIZE` | Размер модуля в пикселях | `12` |
 | `QR_QR_BORDER` | Ширина границы в модулях | `4` |
 
-### Безопасность
-
-- `QR_CORS_ORIGINS` по умолчанию пуст: кросс-доменные запросы запрещены. Для публичного API укажите доверенные источники, например `https://app.example.com`.
-- `QR_RATE_LIMIT` работает в памяти текущего процесса. При запуске нескольких реплик за балансировщиком используйте общее хранилище (Redis) через собственную реализацию `RateLimitBackend`.
-- `QR_MAX_CONTENT_LENGTH` и `QR_REQUEST_TIMEOUT` защищают от слишком больших тел запросов и долгой генерации.
-
 ## Запуск через Docker
 
 ```bash
@@ -111,11 +105,4 @@ tests/
 └── integration/   # Интеграционные тесты API
 ```
 
-## CI/CD
 
-Репозиторий содержит GitHub Actions workflow:
-
-- `pr.yml` — lint, format, type check, tests + сборка Docker + smoke test на каждый PR
-- `main.yml` — tests + сборка Docker + smoke test после merge в `main`
-- `audit.yml` — еженедельный аудит зависимостей через `pip-audit`
-- `dependabot.yml` — автоматические PR с обновлениями зависимостей Python и GitHub Actions
