@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Studio</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QR Studio</h1>
+            <button id="theme-toggle" aria-label="Toggle theme">◐</button>
+        </header>
+
+        <main>
+            <div class="input-group">
+                <label>Data Type</label>
+                <div class="segmented">
+                    <button class="active" data-type="url">URL</button>
+                    <button data-type="text">Text</button>
+                </div>
+            </div>
+
+            <div class="input-group" id="url-group">
+                <label for="url-input">URL</label>
+                <input type="url" id="url-input" placeholder="https://example.com"
+                       value="https://example.com">
+            </div>
+
+            <div class="input-group hidden" id="text-group">
+                <label for="text-input">Text / JSON / Any string</label>
+                <textarea id="text-input" rows="5"
+                    placeholder='Any text, e.g. {&#10;  "ver": "v1",&#10;  "name": "PROV_BF1E98"&#10;}'
+                >{"ver":"v1","name":"PROV_BF1E98","pop":"BENZ8YE6у53U","transport":"ble"}</textarea>
+                <span class="hint">Supports: plain text, JSON, base64, raw strings. Max 2048 chars.</span>
+            </div>
+
+            <div class="input-group">
+                <label>Format</label>
+                <div class="segmented">
+                    <button class="active" data-fmt="png">PNG</button>
+                    <button data-fmt="svg">SVG</button>
+                </div>
+            </div>
+
+            <button id="generate" class="primary">Generate</button>
+
+            <div id="preview" class="preview hidden">
+                <div id="qr-container"></div>
+                <div class="actions">
+                    <button id="download" class="secondary">Download</button>
+                </div>
+            </div>
+
+            <div id="error" class="error hidden"></div>
+        </main>
+
+        <footer>
+            <span><span class="status-dot"></span>SYSTEM ONLINE</span>
+            <span>QR-STUDIO v1.1.0</span>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

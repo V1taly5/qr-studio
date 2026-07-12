@@ -1,0 +1,21 @@
+.git
+.gitignore
+.env
+.venv
+venv
+*.md
+*.log
+__pycache__
+*.pyc
+.DS_Store
+.vscode
+.idea
+
+# CI / test artifacts
+.github/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
